@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Contact</title>
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/components/contact-form.css" />
+        <link rel="stylesheet" href="css/components/modal.css" />
+        <link
+            rel="apple-touch-icon"
+            sizes="57x57"
+            href="/favicon/apple-icon-57x57.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="60x60"
+            href="assets/favicon/apple-icon-60x60.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="72x72"
+            href="assets/favicon/apple-icon-72x72.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="76x76"
+            href="assets/favicon/apple-icon-76x76.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="114x114"
+            href="assets/favicon/apple-icon-114x114.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="120x120"
+            href="assets/favicon/apple-icon-120x120.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="144x144"
+            href="assets/favicon/apple-icon-144x144.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="152x152"
+            href="assets/favicon/apple-icon-152x152.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="assets/favicon/apple-icon-180x180.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="192x192"
+            href="assets/favicon/android-icon-192x192.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="assets/favicon/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="96x96"
+            href="assets/favicon/favicon-96x96.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="assets/favicon/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+        <meta name="theme-color" content="#ffffff" />
+    </head>
+    <body>
+        <div class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img
+                            src="images/tutorleo-dev-white.svg"
+                            alt="UNICDA"
+                            width="170"
+                        />
+                    </a>
+                </div>
+                <ul class="nav-menu-list">
+                    <li class="option-menu-list-item">
+                        <a class="li-link link-home" href="index.html"
+                            >Inicio</a
+                        >
+                    </li>
+                    <li class="option-menu-list-item">
+                        <a class="li-link link-about" href="about.html"
+                            >Nosotros</a
+                        >
+                    </li>
+                    <li class="option-menu-list-item">
+                        <a class="li-link link-contact" href="contact.html"
+                            >Contacto</a
+                        >
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container-content">
+            <div class="und-body">
+                <div id="und-form">
+                    <h3 class="und-h3">Contáctanos</h3>
+
+                    <form
+                        id="und-form-id"
+                        class="und-form-class"
+                        onsubmit="handleSubmit(event)"
+                    >
+                        <div class="und-form-group">
+                            <label for="Name" class="und-label"
+                                >Tu nombre</label
+                            >
+                            <div class="und-input-group">
+                                <input
+                                    type="text"
+                                    id="Name"
+                                    name="Name"
+                                    class="und-form-control"
+                                    required
+                                />
+                                <span id="name-error" class="error"
+                                    >El nombre es obligatorio.</span
+                                >
+                            </div>
+                        </div>
+
+                        <div class="und-form-group">
+                            <label for="Email" class="und-label"
+                                >Tu email</label
+                            >
+                            <div class="und-input-group">
+                                <input
+                                    type="email"
+                                    id="Email"
+                                    name="Email"
+                                    class="und-form-control"
+                                    required
+                                />
+                                <span id="email-error" class="error"
+                                    >El email es obligatorio.</span
+                                >
+                            </div>
+                        </div>
+
+                        <div class="und-form-group">
+                            <label for="Message" class="und-label"
+                                >Tu mensaje</label
+                            >
+                            <div class="und-input-group">
+                                <textarea
+                                    id="Message"
+                                    name="Message"
+                                    class="und-form-control"
+                                    rows="6"
+                                    maxlength="3000"
+                                    required
+                                ></textarea>
+                                <span id="message-error" class="error"
+                                    >El mensaje es obligatorio.</span
+                                >
+                            </div>
+                        </div>
+
+                        <div class="und-form-group">
+                            <button
+                                type="submit"
+                                id="und-button-form-contact"
+                                class="und-btn und-btn-primary und-btn-lg und-btn-block"
+                            >
+                                Enviar Mensaje
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- [*start] Modal chat - services -->
+        <div id="modal-info" class="modal modal-container">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close-modal close-modal-info">&times;</span>
+                    <h2 id="modal-title"></h2>
+                </div>
+                <div class="modal-body">
+                    <div id="info-content"></div>
+                </div>
+            </div>
+        </div>
+        <!-- [*end] Modal chat - services -->
+        <footer class="footer-base">
+            <div class="footer-content">
+                <div class="footer-content-left">
+                    <p>
+                        <a href="#"
+                            ><img
+                                src="images/icons/facebook-no-fill.svg"
+                                alt="Facebook"
+                                width="30"
+                        /></a>
+                        <a href="#"
+                            ><img
+                                src="images/icons/instagram-no-fill.svg"
+                                alt="Instagram"
+                                width="30"
+                        /></a>
+                        <a href="#"
+                            ><img
+                                src="images/icons/twitter-no-fill.svg"
+                                alt="Twitter"
+                                width="30"
+                        /></a>
+                        <a href="#"
+                            ><img
+                                src="images/icons/youtube-no-fill.svg"
+                                alt="Youtube"
+                                width="30"
+                        /></a>
+                    </p>
+                </div>
+                <div class="footer-content-right">
+                    <p>
+                        <a
+                            class="base-plain-button"
+                            href="https://icda.edu.do/biblioteca/contactos/"
+                            target="_blank"
+                            >Contactenos</a
+                        >
+                    </p>
+                </div>
+            </div>
+        </footer>
+        <script type="module" src="js/form-validation.js"></script>
+        <!-- <script type="module" src="js/index.js"></script> -->
+    </body>
+</html>

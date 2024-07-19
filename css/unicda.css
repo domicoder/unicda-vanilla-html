@@ -1,0 +1,307 @@
+:root {
+    --ripple-color: #b8a3e082;
+}
+:root {
+    --theme-color-bg: #6422dd;
+}
+:root {
+    --theme-color: #6422dd;
+}
+/* ***** Ripple style ***** */
+.btn-ripple {
+    box-sizing: border-box;
+    border: none;
+    cursor: pointer;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 2px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    background: var(--theme-color-bg);
+    transition: all 0.1s;
+    outline: none;
+}
+
+.btn-ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-ripple:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background-color: var(--ripple-color);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 1;
+    }
+    20% {
+        transform: scale(25, 25);
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(40, 40);
+    }
+}
+
+.btn-ripple:focus:not(:active)::after {
+    animation: ripple 1s ease-out;
+}
+.btn-ripple:active {
+    transform: scale(0.9) translate(0px, 5px);
+    box-shadow: none;
+}
+
+.btn-ripple:after {
+    visibility: hidden;
+}
+
+.btn-ripple:focus:after {
+    visibility: visible;
+}
+
+.bt-outline {
+    background: none;
+    border: 2px solid var(--theme-color);
+    color: var(--theme-color);
+}
+.bt-outline.btn-ripple:after {
+    background: var(--theme-color-bg);
+}
+/* ***** [end] Ripple style ***** */
+
+/* * unicda */
+.und-bg-transparent {
+    background-color: transparent;
+}
+
+.und-overflow-x-auto {
+    overflow-x: auto;
+}
+
+.und-text-thin {
+    font-family: Inter, sans-serif;
+    color: #cdcdcd;
+    font-size: 14px;
+}
+
+.und-text-thin--sign {
+    color: #cdcdcd;
+    font-size: 16px;
+    transform: skew(-8deg, -8deg);
+    margin: 0;
+}
+
+.und-highlighted {
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(90deg, #6422dd, #5a22dd);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.und-btn {
+    /* background-color: transparent; */
+    background-size: 1200%;
+    border: 1px solid hsla(0, 0%, 100%, 0.25);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px 0 #d8443240;
+    color: #fff;
+    display: inline-block;
+    font-family: Inter, sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.625;
+    max-width: 100%;
+    padding: 10px 24px 12px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    transition: background 0.3s ease, color 0.3s ease;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-position: 10% 10%;
+    -webkit-transition: ease-in-out 0.3s;
+    transition: ease-in-out 0.3s;
+}
+
+.btn-zero {
+    background-color: #eb618a;
+    background-image: linear-gradient(90deg, #ec5b47, #eb618a);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px 0 #d8443240;
+    color: #fff;
+    display: inline-block;
+    font-family: Inter, sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.625;
+    max-width: 100%;
+    padding: 10px 24px 12px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    transition: background 0.3s ease, color 0.3s ease;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: linear-gradient(
+        -45deg,
+        #d951b2,
+        #6422dd,
+        #d951b2,
+        #6422dd,
+        #d951b2,
+        #6422dd,
+        #d951b2,
+        #6422dd,
+        #d951b2,
+        #6422dd,
+        #d951b2,
+        #6422dd
+    );
+    background-size: 1200%;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px 0 #d8443240;
+    color: #fff;
+    display: inline-block;
+    font-family: Inter, sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.625;
+    max-width: 100%;
+    padding: 10px 24px 12px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    transition: background 0.3s ease, color 0.3s ease;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.btn-ghost {
+    background: 0 0;
+    border: 1px solid hsla(0, 0%, 100%, 0.25);
+    box-shadow: none;
+    color: #fff;
+    padding-bottom: 11px;
+    padding-top: 9px;
+}
+
+.und-btn:hover,
+.btn-ghost:hover {
+    background-color: #6422dd;
+    color: #fff;
+}
+
+/* ***** [start] Inter Front ***** */
+.inter-black {
+    font-family: Inter, sans serif;
+    font-weight: 900;
+    line-height: 2.35rem;
+}
+
+.inter-extrabold {
+    font-family: Inter, sans serif;
+    font-weight: 800;
+    line-height: 1.75rem;
+}
+
+.inter-bold {
+    font-family: Inter, sans serif;
+    font-weight: 700;
+    line-height: 1.5rem;
+}
+
+.inter-semibold {
+    font-family: Inter, sans serif;
+    font-weight: 600;
+    line-height: 2.8rem;
+}
+
+.inter-medium {
+    font-family: Inter, sans serif;
+    font-weight: 500;
+    line-height: 1rem;
+}
+
+.inter-regular {
+    font-family: Inter, sans serif;
+    font-weight: 400;
+    line-height: 0.875rem;
+}
+
+.inter-light {
+    font-family: Inter, sans serif;
+    font-weight: 300;
+    line-height: 0.75rem;
+}
+
+.inter-extralight {
+    font-family: Inter, sans serif;
+    font-weight: 200;
+    line-height: 0.625rem;
+}
+
+.inter-thin {
+    font-family: Inter, sans serif;
+    font-weight: 100;
+    line-height: 0.5rem;
+}
+
+/* ***** Weight ***** */
+.und-font-thin {
+    font-weight: 100;
+}
+
+.und-font-extralight {
+    font-weight: 200;
+}
+
+.und-font-light {
+    font-weight: 300;
+}
+
+.und-font-normal {
+    font-weight: 400;
+}
+
+.und-font-medium {
+    font-weight: 500;
+}
+
+.und-font-semibold {
+    font-weight: 600;
+}
+
+.und-font-bold {
+    font-weight: 700;
+}
+
+.und-font-extrabold {
+    font-weight: 800;
+}
+
+.und-font-black {
+    font-weight: 900;
+}

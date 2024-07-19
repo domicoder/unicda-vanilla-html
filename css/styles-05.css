@@ -1,0 +1,47 @@
+h1 {
+    color: red;
+}
+#header {
+    border: 1px solid black;
+    height: 80px;
+    width: 300px;
+    background-color: silver;
+    margin: 0 auto;
+}
+#header ul {
+    list-style-type: none;
+}
+#header ul li {
+    width: 70px;
+    display: inline;
+    padding: 5px;
+}
+#header ul li a:link {
+    text-decoration: none;
+    color: blue;
+}
+#header ul li a:visited {
+    text-decoration: none;
+    color: aqua;
+}
+#header ul li a:hover {
+    text-decoration: none;
+    font-weight: bold;
+    color: red;
+}
+#header ul li a:active {
+    text-decoration: none;
+}
+#container {
+    border: 1px solid black;
+    height: 300px;
+    width: 700px;
+    position: relative;
+    margin: 0px auto;
+}
+#footer {
+    border: 1px solid black;
+    height: 50px;
+    width: 700px;
+    margin: 0px auto;
+}
